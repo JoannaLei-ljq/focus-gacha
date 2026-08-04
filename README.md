@@ -6,6 +6,8 @@ A task randomizer that turns "what should I work on?" into pulling a handle on a
 
 Built as a lightweight, judgment-free way to get moving on a task when deciding *what* to do next feels harder than actually doing it.
 
+![Focus Gacha screenshot](docs/screenshot.png)
+
 ## The idea
 
 It's a to-do list, but with two twists:
