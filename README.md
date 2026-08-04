@@ -1,5 +1,7 @@
 # Focus Gacha 🎰
 
+**Live demo: [focus-gacha.vercel.app](https://focus-gacha.vercel.app/)**
+
 A task randomizer that turns "what should I work on?" into pulling a handle on a gashapon (capsule toy) machine, instead of staring at a to-do list.
 
 Built as a lightweight, judgment-free way to get moving on a task when deciding *what* to do next feels harder than actually doing it.
@@ -29,6 +31,7 @@ It's a to-do list, but with two twists:
 - Plain CSS (no UI framework) — hand-built SVG machine illustration, capsule physics, and a single responsive layout
 - Web Audio API for the timer's notification sound
 - ESLint with the React Hooks plugin
+- Deployed on [Vercel](https://vercel.com/) (static build, auto-deploys on push to `main`)
 
 ## Running it locally
 
