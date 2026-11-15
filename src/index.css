@@ -1,55 +1,111 @@
+/* Design tokens — one place for every color, radius, shadow and font. */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* surfaces */
+  --wall: #dcebf7;
+  --wall-deep: #c9dff1;
+  --sand: #f2e2c9;
+  --sand-deep: #e6d1b0;
+  --cream: #fffaf1;
+  --paper: #ffffff;
+
+  /* ink */
+  --ink: #2c3a57;
+  --ink-2: #5a6784;
+  --ink-3: #8b96ad;
+  --line: rgba(44, 58, 87, 0.1);
+
+  /* accents */
+  --blue: #82b8e5;
+  --blue-deep: #5a91c6;
+  --blue-ink: #3e6f9f;
+  --pink: #f4a3b8;
+  --pink-deep: #de7f9a;
+  --pink-ink: #b9566f;
+  --mint: #9fd8b9;
+  --mint-deep: #6db892;
+  --mint-ink: #2f7a55;
+  --butter: #f5d77e;
+  --butter-light: #fbefc6;
+  --butter-deep: #d9b451;
+
+  /* shape */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+
+  --shadow-soft: 0 1px 0 rgba(255, 255, 255, 0.8) inset, 0 12px 30px -14px rgba(46, 74, 112, 0.35);
+  --shadow-float: 0 24px 60px -20px rgba(46, 74, 112, 0.45);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --font-display: "Fredoka", "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-body: "Nunito", ui-rounded, system-ui, -apple-system, sans-serif;
+  --font-hand: "Patrick Hand", "Nunito", cursive;
+  --font-pixel: "Silkscreen", ui-monospace, monospace;
 
   color-scheme: light;
-  color: #213547;
-  background-color: #fef6e4;
-
+  font-family: var(--font-body);
+  color: var(--ink);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #ee5a52;
-  text-decoration: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #ee5a52;
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--wall);
+  /* soft dotted wallpaper, a nod to the pixel arcade reference */
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.55) 1.2px, transparent 1.4px),
+    linear-gradient(180deg, #e4f0fa 0%, var(--wall) 55%, var(--wall-deep) 100%);
+  background-size: 22px 22px, 100% 100%;
+  background-attachment: fixed;
 }
 
-h1 {
-  font-size: 2.4em;
-  line-height: 1.1;
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #f9f9f9;
   cursor: pointer;
-  transition: border-color 0.25s;
+  -webkit-tap-highlight-color: transparent;
 }
-button:hover {
-  border-color: #ee5a52;
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
-button:focus,
-button:focus-visible {
-  outline: 3px auto #ee5a52;
+
+:focus-visible {
+  outline: 3px solid rgba(90, 145, 198, 0.55);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
